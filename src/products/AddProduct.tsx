@@ -59,7 +59,7 @@ const AddProduct = () => {
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const { name, price, description, image } = formData;
+        const { name, price, description } = formData;
 
         if(!name || !price || !description) {
             alert("모든 항목을 입력해주세요.");
