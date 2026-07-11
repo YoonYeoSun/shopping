@@ -3,13 +3,27 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './layouts/Header'
+import Home from './layouts/Home'
+import ProductList from './products/ProductList'
+import ProductInfo from './products/ProductInfo'
+import AddProduct from './products/AddProduct'
 
 function App() {
   
   return (
     <>
       <section className="app">
-        <h2>쇼핑몰 라우팅</h2>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/products/:id" element={<ProductInfo />} />
+            <Route path="/products/add" element={<AddProduct />} />
+          </Routes>
+        </BrowserRouter>
       </section>
     </>
   )
