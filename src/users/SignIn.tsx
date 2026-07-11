@@ -34,9 +34,10 @@ const SignIn = () => {
 
         console.log("formData: ", formData);
         
-        const matched = users.find(user => 
-            user.username === username && user.password === password
-        )
+        //const matched = users.find(user => user.username === username && user.password === password);
+        const matched = users.find((user) => {
+            return user.username === username && user.password === password
+        });
 
         if(matched) {
             setLoginResult("success");
