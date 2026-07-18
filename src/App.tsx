@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import Header from './layouts/Header'
 import Home from './layouts/Home'
 import ProductList from './products/ProductList'
@@ -28,6 +28,7 @@ function App() {
     setIsLoggedIn(false);
     setUserId(null);
     setUserRole(null);
+    // window.location.href = "/";
   }
 
   return (

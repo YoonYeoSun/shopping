@@ -36,8 +36,8 @@ const Header = ({isLoggedIn, userId, userRole, onLogout}: HeaderProps) => {
                             <span>{userId}님</span>
                             <button
                                 onClick={() => {
-                                    onLogout();
-                                    navigate("/");
+                                    onLogout()
+                                    navigate("/", {replace: true})
                                 }}
                                 className="logout-btn"
                             >
