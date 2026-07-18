@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './layouts/Header'
 import Home from './layouts/Home'
 import ProductList from './products/ProductList'
@@ -7,7 +7,7 @@ import ProductInfo from './products/ProductInfo'
 import AddProduct from './products/AddProduct'
 import SignIn from './users/SignIn'
 import { useState } from 'react'
-import SignUp from './users/SignUp'
+import SignUp from './users/Signup'
 import DashBoard from './users/DashBoard'
 
 function App() {
