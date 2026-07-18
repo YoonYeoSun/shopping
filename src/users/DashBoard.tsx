@@ -1,13 +1,6 @@
-import { useNavigate } from "react-router-dom"
 import orders from "../data/orders.json"
 
-interface DashboardProps {
-    userRole: string | null
-}
-
-const DashBoard = ({userRole}: DashboardProps) => {
-
-    const navigate = useNavigate();
+const DashBoard = () => {
 
     return (
         <div>
