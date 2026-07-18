@@ -7,7 +7,7 @@ import ProductInfo from './products/ProductInfo'
 import AddProduct from './products/AddProduct'
 import SignIn from './users/SignIn'
 import { useState } from 'react'
-import SignUp from './users/Signup'
+import SignUp from './users/SignUp'
 import DashBoard from './users/DashBoard'
 
 function App() {
