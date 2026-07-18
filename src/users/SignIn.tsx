@@ -8,7 +8,7 @@ interface SignInForm {
 }
 
 interface SignInProps {
-    onLogin: (username: string) => void;
+    onLogin: (username: string, role: string) => void;
 }
 
 const SignIn = ({onLogin}: SignInProps) => {
@@ -45,7 +45,7 @@ const SignIn = ({onLogin}: SignInProps) => {
 
         if(matched) {
             setLoginResult("success");
-            onLogin(username);
+            onLogin(matched.username, matched.role);
             alert("로그인 되었습니다.");
             navigate("/");
         } else {

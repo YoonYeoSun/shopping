@@ -8,6 +8,7 @@ import AddProduct from './products/AddProduct'
 import SignIn from './users/SignIn'
 import { useState } from 'react'
 import SignUp from './users/SignUp'
+import DashBoard from './users/DashBoard'
 
 function App() {
   
@@ -15,14 +16,18 @@ function App() {
 
   const [userId, setUserId] = useState<string | null>(null);
 
-  const handleLogin = (userName: string) => {
+  const [userRole, setUserRole] = useState<string | null>(null);
+
+  const handleLogin = (userName: string, role: string) => {
     setIsLoggedIn(true);
     setUserId(userName);
+    setUserRole(role);
   }
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUserId(null);
+    setUserRole(null);
   }
 
   return (
@@ -32,6 +37,7 @@ function App() {
           <Header 
             isLoggedIn={isLoggedIn}
             userId={userId}
+            userRole={userRole}
             onLogout={handleLogout}
           />
           <Routes>
@@ -41,6 +47,7 @@ function App() {
             <Route path="/products/add" element={<AddProduct />} />
             <Route path="/signIn" element={<SignIn onLogin={handleLogin} />} />
             <Route path="/signUp" element={<SignUp />} />
+            <Route path="/dashboard" element={<DashBoard />} userRole={userRole} />
           </Routes>
         </BrowserRouter>
       </section>

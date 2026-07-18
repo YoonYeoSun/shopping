@@ -339,6 +339,10 @@
 } 
 
 /* 관리자 DashBoard 스타일 */
+.order-table-wrap{
+  width: 90%;
+  margin: 0 auto;
+}
 .order-table{
   width: 100%;
   border-collapse: collapse;

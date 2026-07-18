@@ -3,10 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 interface HeaderProps {
     isLoggedIn: boolean,
     userId: string | null, 
+    userRole: string | null,
     onLogout: () => void
 }
 
-const Header = ({isLoggedIn, userId, onLogout}: HeaderProps) => {
+const Header = ({isLoggedIn, userId, userRole, onLogout}: HeaderProps) => {
 
     const navigate = useNavigate();
 
@@ -16,6 +17,10 @@ const Header = ({isLoggedIn, userId, onLogout}: HeaderProps) => {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/products">상품목록</NavLink>
                 <NavLink to="/products/add">상품등록</NavLink>
+                {
+                    userRole === "admin" &&
+                    <NavLink to="/dashboard">관리자</NavLink>
+                }                
                 {isLoggedIn ? 
                     (
                         <div className="header-user">
